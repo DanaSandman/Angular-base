@@ -8,6 +8,8 @@
     transition: transform 0.3s, box-shadow 0.3s;
     background: white;
     height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 
     &:hover {
     transform: translateY(-5px);
