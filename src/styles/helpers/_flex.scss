@@ -1,7 +1,9 @@
+@use '../setup/mixins' as *;
+
 // Flex
 .flex {
   display: flex;
-}
+
   // Flex direction
   &.flex-row { flex-direction: row; }
   &.flex-column { flex-direction: column; }
@@ -32,9 +34,9 @@
     &.flex-mobile-col { flex-direction: column; }
     &.flex-mobile-row { flex-direction: row; }
   }
+}
 
-
-// Flex child utilities
+// Flex child utilities (מחוץ לבלוק .flex)
 .flex-1 { flex: 1; }
 .flex-auto { flex: auto; }
 .flex-initial { flex: initial; }

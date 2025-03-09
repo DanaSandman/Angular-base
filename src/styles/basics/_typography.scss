@@ -1,10 +1,11 @@
-// Import variables
-@import '../variables/typography';
+@use '../setup/typography' as setup_typo;
+@use '../setup/functions' as funcs;
+@use '../variables/typography' as *;
 
 // Base HTML settings
 html {
   font-size: $base-font-size;
-  font-family: neuzeit, $base-font-family;
+  // font-family: neuzeit, $base-font-family;
   line-height: $line-height-base;
   color: var(--text-primary, #333);
 }

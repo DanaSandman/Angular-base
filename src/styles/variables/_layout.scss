@@ -1,3 +1,4 @@
+@use '../helpers/spacing' as *; 
 // Layout variables
 $container-padding: $space-4;
 $sidebar-width: 250px;
@@ -11,4 +12,5 @@ $z-index-fixed: 30;
 $z-index-modal-backdrop: 40;
 $z-index-modal: 50;
 $z-index-popover: 60;
-$z-index-tooltip: 70; 
+$z-index-tooltip: 70;
+

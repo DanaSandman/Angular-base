@@ -1,3 +1,7 @@
+@use '../helpers/spacing' as *;
+@use '../variables/colors' as *;
+@use '../variables/layout' as *;
+
 // Position utilities
 .relative { position: relative; }
 .absolute { position: absolute; }

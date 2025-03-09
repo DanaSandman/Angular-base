@@ -1,22 +1,21 @@
-// base variables
-@import 'variables/breakpoints';
-@import 'variables/colors';
-@import 'variables/typography';
+@use './variables/index' as *;
+@use './variables/colors' as colors;
+@use './variables/typography' as vars_typography;
+@use './helpers/spacing' as spacing;
+@use './variables/layout' as layout;
 
-// functions and mixins
-@import 'setup/functions';
-@import 'setup/mixins';
+@use './setup/index' as *;
+@use './setup/functions' as funcs;
+@use './setup/mixins' as mixins;
 
-// base typography and reset
-@import 'setup/typography';
-@import 'setup/reset';
+@use './helpers/index' as *;
+@use './helpers/responsive' as responsive;
+@use './helpers/utilities' as utils;
+@use './helpers/flex' as flex;
 
-// base components
-@import 'basics/typography';
-@import 'basics/layout';
+@use './setup/typography' as typo;
+@use './setup/reset' as reset;
 
-// helpers
-@import 'helpers/media';
-@import 'helpers/flex';
-@import 'helpers/font-sizes';
-@import 'helpers/spacing';
+@use './basics/index' as *;
+@use './basics/typography' as basic_typography;
+@use './basics/layout' as layout_comps;
