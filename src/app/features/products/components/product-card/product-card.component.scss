@@ -1,3 +1,5 @@
+@use 'src/styles/variables/icons' as icon;
+
 .product-card {
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -41,5 +43,13 @@
     color: #6c757d;
     font-size: 14px;
     text-transform: capitalize;
+    }
+
+    .favorite-icon {
+    color: icon.$icon-danger;
+    }
+    
+    .add-to-cart-icon {
+    color: icon.$icon-primary;
     }
 } 
