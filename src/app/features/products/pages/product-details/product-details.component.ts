@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-details',
@@ -6,6 +9,39 @@ import { Component } from '@angular/core';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit {
+  product: Product | null = null;
+  loading = true;
+  error = '';
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productsService: ProductsService
+  ) { }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const id = +params['id'];
+      this.loadProduct(id);
+    });
+  }
+
+  loadProduct(id: number): void {
+    this.loading = true;
+    this.productsService.getProduct(id).subscribe({
+      next: (product) => {
+        this.product = product;
+        this.loading = false;
+      },
+      error: (err) => {
+        this.error = 'שגיאה בטעינת המוצר: ' + err.message;
+        this.loading = false;
+      }
+    });
+  }
+
+  goBack(): void {
+    this.router.navigate(['/products']);
+  }
 }

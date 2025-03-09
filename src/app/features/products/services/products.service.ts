@@ -38,4 +38,8 @@ import { ApiService } from '../../../core/http/api.service';
     deleteProduct(id: number): Observable<any> {
         return this.apiService.delete<any>(`${this.endpoint}/${id}`);
     }
+
+    getCategories(): Observable<string[]> {
+        return this.apiService.get<string[]>(`${this.endpoint}/categories`);
+    }
 } 

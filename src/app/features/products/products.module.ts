@@ -5,8 +5,9 @@ import { RouterModule } from '@angular/router';
 // Pages
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
-// // Components
-// import { ProductCardComponent } from './components/product-card/product-card.component';
+// Components
+import { ProductCardComponent } from './components/product-card/product-card.component';
+// Import ProductFilterComponent only if you're going to use it
 // import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 
 @NgModule({
@@ -15,17 +16,15 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     ProductsListComponent,
     ProductDetailsComponent,
     
-    // // Components
-    // ProductCardComponent,
+    // Components
+    ProductCardComponent
+    // Uncomment if you're using it
     // ProductFilterComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
     ProductsRoutingModule
   ],
-  providers: [
-    //if there are specific services for this module
-  ]
+  providers: []
 })
 export class ProductsModule { } 
