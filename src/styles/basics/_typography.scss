@@ -5,7 +5,7 @@
 // Base HTML settings
 html {
   font-size: $base-font-size;
-  // font-family: neuzeit, $base-font-family;
+  font-family: var(--font-family-base);
   line-height: $line-height-base;
   color: var(--text-primary, #333);
 }
@@ -16,7 +16,7 @@ body {
 
 // Headers
 h1, h2, h3, h4, h5, h6 {
-  font-family: neuzeit-black, $heading-font-family;
+  font-family: var(--font-family-heading);
   font-weight: $font-weight-bold;
   line-height: $line-height-tight;
   margin-top: 0.5em;
