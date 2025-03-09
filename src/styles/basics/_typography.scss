@@ -1,0 +1,82 @@
+// Import variables
+@import '../variables/typography';
+
+// Base HTML settings
+html {
+  font-size: $base-font-size;
+  font-family: neuzeit, $base-font-family;
+  line-height: $line-height-base;
+  color: var(--text-primary, #333);
+}
+
+body {
+  font-weight: $font-weight-regular;
+}
+
+// Headers
+h1, h2, h3, h4, h5, h6 {
+  font-family: neuzeit-black, $heading-font-family;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+h2 {
+  font-size: $h2-font-size;
+}
+
+h3 {
+  font-size: $h3-font-size;
+}
+
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+// Paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+// Small text
+small, .text-small {
+  font-size: $text-sm;
+}
+
+// Rich text styling
+.text-light { font-weight: $font-weight-light; }
+.text-normal { font-weight: $font-weight-regular; }
+.text-medium { font-weight: $font-weight-medium; }
+.text-semibold { font-weight: $font-weight-semibold; }
+.text-bold { font-weight: $font-weight-bold; }
+
+// Text sizes
+.text-xs { font-size: $text-xs; }
+.text-sm { font-size: $text-sm; }
+.text-md { font-size: $text-md; }
+.text-lg { font-size: $text-lg; }
+.text-xl { font-size: $text-xl; }
+.text-2xl { font-size: $text-2xl; }
+
+// For RTL/Hebrew support
+html[dir="rtl"] {
+  font-family: $rtl-font-family;
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $rtl-heading-font-family;
+  }
+} 

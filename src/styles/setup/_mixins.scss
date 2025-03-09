@@ -1,0 +1,69 @@
+/* Breakpoint mixins */
+
+// Mobile devices (until 600px)
+@mixin for-mobile {
+    @media (max-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+// Tablet devices (601px - 900px)
+@mixin for-tablet {
+    @media (min-width: #{$mobile-breakpoint + 1px}) and (max-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+// Small laptop devices (901px - 1200px)
+@mixin for-small-laptop {
+    @media (min-width: #{$tablet-breakpoint + 1px}) and (max-width: $small-laptop-breakpoint) {
+        @content;
+    }
+}
+
+// Desktop devices (1201px - 1800px)
+@mixin for-desktop {
+    @media (min-width: #{$small-laptop-breakpoint + 1px}) and (max-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+// Large screens (1801px and more)
+@mixin for-large-screens {
+    @media (min-width: #{$desktop-breakpoint + 1px}) {
+        @content;
+    }
+}
+
+/* Media Mixins */
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    > img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+  
+// Mixin for removing hover efects on iphone screen
+@mixin hover-for-non-touch {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}

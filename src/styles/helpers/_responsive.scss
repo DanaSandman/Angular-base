@@ -1,0 +1,41 @@
+// Responsive visibility helpers
+
+// Hide/show elements based on screen size
+.hide-mobile {
+  @include for-mobile {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none !important;
+  @include for-mobile {
+    display: block !important;
+  }
+}
+
+.hide-tablet {
+  @include for-tablet {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  display: none !important;
+  @include for-tablet {
+    display: block !important;
+  }
+}
+
+.hide-desktop {
+  @include for-desktop {
+    display: none !important;
+  }
+}
+
+.show-desktop {
+  display: none !important;
+  @include for-desktop {
+    display: block !important;
+  }
+} 

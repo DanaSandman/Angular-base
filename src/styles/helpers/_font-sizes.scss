@@ -1,0 +1,16 @@
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 24px,
+  xxl: 32px,
+);
+
+@each $name, $size in $font-sizes {
+  .font-#{$name} {
+    font-size: $size;
+  }
+}
+
+// for use: class="font-xl" etc.

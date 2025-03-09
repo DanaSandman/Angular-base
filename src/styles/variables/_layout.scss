@@ -1,0 +1,14 @@
+// Layout variables
+$container-padding: $space-4;
+$sidebar-width: 250px;
+$content-max-width: 1200px;
+$mobile-padding: 1rem;
+
+// Z-index levels
+$z-index-dropdown: 10;
+$z-index-sticky: 20;
+$z-index-fixed: 30;
+$z-index-modal-backdrop: 40;
+$z-index-modal: 50;
+$z-index-popover: 60;
+$z-index-tooltip: 70; 

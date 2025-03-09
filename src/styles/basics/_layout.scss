@@ -1,0 +1,174 @@
+// Main container with responsive width
+.main-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $space-4;
+  padding-left: $space-4;
+  
+  @include for-mobile {
+    max-width: 100%;
+  }
+  
+  @include for-tablet {
+    max-width: $tablet-breakpoint - 32px;
+  }
+  
+  @include for-small-laptop {
+    max-width: $small-laptop-breakpoint - 64px;
+  }
+  
+  @include for-desktop {
+    max-width: $small-laptop-breakpoint - 32px;
+  }
+  
+  @include for-large-screens {
+    max-width: $desktop-breakpoint - 64px;
+  }
+  
+  &.container-fluid {
+    max-width: 100%;
+  }
+  
+  &.container-narrow {
+    max-width: 768px;
+  }
+}
+
+// Grid system - main layout
+.main-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(auto, 1200px)
+    minmax(1rem, 1fr);
+    
+  > * {
+    grid-column: 2;
+    
+    &.full-width {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  @include for-mobile {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(auto, 100%)
+      minmax(1rem, 1fr);
+  }
+}
+
+// Flexible Grid System - adjusts to screen size automatically
+.grid {
+  display: grid;
+  gap: $space-4;
+  
+  &.grid-1 { grid-template-columns: repeat(1, 1fr); }
+  &.grid-2 { grid-template-columns: repeat(2, 1fr); }
+  &.grid-3 { grid-template-columns: repeat(3, 1fr); }
+  &.grid-4 { grid-template-columns: repeat(4, 1fr); }
+  &.grid-5 { grid-template-columns: repeat(5, 1fr); }
+  &.grid-6 { grid-template-columns: repeat(6, 1fr); }
+  
+  // Auto-fit grid (adjusts columns automatically)
+  &.grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  // Auto-fill grid (fills as many columns as possible)
+  &.grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  // Responsive grids
+  @include for-mobile {
+    &.grid-mobile-1 { grid-template-columns: repeat(1, 1fr); }
+    &.grid-mobile-2 { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @include for-tablet {
+    &.grid-tablet-2 { grid-template-columns: repeat(2, 1fr); }
+    &.grid-tablet-3 { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  @include for-small-laptop {
+    &.grid-laptop-3 { grid-template-columns: repeat(3, 1fr); }
+    &.grid-laptop-4 { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  // Grid gap variations
+  &.gap-0 { gap: $space-0; }
+  &.gap-1 { gap: $space-1; }
+  &.gap-2 { gap: $space-2; }
+  &.gap-3 { gap: $space-3; }
+  &.gap-4 { gap: $space-4; }
+  &.gap-5 { gap: $space-5; }
+  &.gap-6 { gap: $space-6; }
+}
+
+// Grid areas for main layout sections
+.header-area { grid-area: header; }
+.main-area { grid-area: main; }
+.sidebar-area { grid-area: sidebar; }
+.footer-area { grid-area: footer; }
+
+// Layout with header, main content, and footer
+.page-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+// Layout with sidebar
+.sidebar-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    
+  @include for-mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}
+
+// Hide/show elements based on screen size
+.hide-mobile {
+  @include for-mobile {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none !important;
+  @include for-mobile {
+    display: block !important;
+  }
+}
+
+.hide-tablet {
+  @include for-tablet {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  display: none !important;
+  @include for-tablet {
+    display: block !important;
+  }
+}

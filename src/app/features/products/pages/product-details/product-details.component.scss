@@ -1,0 +1,11 @@
+.product-details-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product-image {
+        max-width: 40rem;
+        max-height: 30rem;
+        object-fit: cover;
+    }
+}
