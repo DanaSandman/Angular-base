@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/product.model';
+import { IconType } from '../../../../shared/icon/icon.types';
 
 @Component({
   selector: 'app-product-details',
@@ -13,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   product: Product | null = null;
   loading = true;
   error = '';
+  iconTypes = IconType;
 
   constructor(
     private route: ActivatedRoute,
@@ -51,5 +53,5 @@ export class ProductDetailsComponent implements OnInit {
     //TODO: Add to cart logic
     console.log('Adding to cart:', this.product);
     // cartService.addToCart(this.product);
-}
+  }
 }
