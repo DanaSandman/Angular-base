@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../../shared/shared.module';
 // Pages
 import { ProductsListComponent } from './pages/products-list/products-list.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
@@ -23,7 +24,9 @@ import { ProductCardComponent } from './components/product-card/product-card.com
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    RouterModule,
+    ProductsRoutingModule,
+    SharedModule
   ],
   providers: []
 })

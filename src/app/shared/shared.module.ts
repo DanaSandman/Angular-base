@@ -12,14 +12,10 @@ import { IconComponent } from './icon/icon.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
-    CommonModule,
-    RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IconComponent
+    IconComponent,
   ]
 })
 export class SharedModule { } 
