@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IconComponent } from './icon/icon.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
-    IconComponent
+    IconComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,
@@ -16,6 +18,7 @@ import { IconComponent } from './icon/icon.component';
   ],
   exports: [
     IconComponent,
+    SafeHtmlPipe
   ]
 })
 export class SharedModule { } 
