@@ -1,3 +1,5 @@
+@use '../../../../../styles/variables/icons' as icon;
+
 .product-details-container{
     display: flex;
     flex-direction: column;
@@ -9,3 +11,7 @@
         object-fit: cover;
     }
 }
+  
+  .add-to-cart-icon {
+    color: icon.$icon-primary;
+  } 

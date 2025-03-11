@@ -1,2 +1,3 @@
-@forward './typography' as basic-typography-*;  // כדי למנוע התנגשויות
-@forward './layout' as basic-layout-*;         // כדי למנוע התנגשויות 
+@forward './typography' as basic-typography-*;  
+@forward './layout' as basic-layout-*;
+@forward './buttons' as basic-buttons-*;

@@ -7,7 +7,7 @@ import { Product } from '../../models/product.model';
   selector: 'app-product-details',
   standalone: false,
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.scss'
+  styleUrl: './product-details.component.scss',
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | null = null;
@@ -44,4 +44,12 @@ export class ProductDetailsComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/products']);
   }
+
+  addToCart(event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    //TODO: Add to cart logic
+    console.log('Adding to cart:', this.product);
+    // cartService.addToCart(this.product);
+}
 }

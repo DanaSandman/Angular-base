@@ -13,7 +13,10 @@
     <p class="description">{{ product.description }}</p>
     
     <div class="actions">
-      <button class="add-to-cart">הוסף לסל</button>
+      <button class="basic-button" (click)="addToCart($event)">
+        <!-- <app-icon name="plus-circle" size="small"></app-icon> -->
+        הוסף לסל
+      </button>
       <button class="back-button" (click)="goBack()">חזרה למוצרים</button>
     </div>
   </div>

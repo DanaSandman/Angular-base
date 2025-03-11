@@ -1,8 +1,7 @@
+@use './colors' as color;
 // Icon colors
-$icon-primary: var(--primary-color);
-$icon-secondary: var(--secondary-color);
-$icon-success: var(--success-color);
-$icon-warning: var(--warning-color);
-$icon-danger: var(--danger-color);
-$icon-light: var(--light-color);
-$icon-dark: var(--dark-color); 
+$icon-primary: color.$primary;
+$icon-secondary: color.$secondary;
+$icon-success: color.$green;
+$icon-warning: color.$red;
+

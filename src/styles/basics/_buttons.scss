@@ -1,0 +1,24 @@
+@use '../variables/colors' as color;
+
+.basic-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: color.$primary;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: color.$secondary;
+    }
+    
+    &:active, &:focus {
+      outline: none;
+    }
+  }
